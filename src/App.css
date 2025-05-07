@@ -47,3 +47,149 @@ pre, code {
 .read-the-docs {
   color: #888;
 }
+
+/* Animation classes */
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-in;
+}
+
+.animate-slideDown {
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Base styles */
+.prose {
+  max-width: 65ch;
+  margin: 0 auto;
+}
+
+.prose ul {
+  list-style-type: none;
+  padding-left: 1rem;
+}
+
+.prose code {
+  font-size: 0.875em;
+  padding: 0.2em 0.4em;
+  border-radius: 0.25em;
+  background: rgba(76, 29, 149, 0.1);
+  color: #4c1d95;
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  .prose {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+
+  .prose h2 {
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+
+  .prose h3 {
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+
+  .prose ul {
+    padding-left: 0.75rem;
+  }
+
+  .prose code {
+    font-size: 0.8125em;
+    padding: 0.15em 0.3em;
+  }
+}
+
+/* Question styles */
+.question-container {
+  transition: all 0.3s ease;
+}
+
+.question-container:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Code block styles */
+.code-block {
+  position: relative;
+  font-family: 'JetBrains Mono', monospace;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.code-block:hover {
+  box-shadow: 0 4px 6px -1px rgba(76, 29, 149, 0.1);
+}
+
+/* Mobile-specific code block adjustments */
+@media (max-width: 640px) {
+  .code-block pre {
+    padding: 0.75rem;
+    font-size: 0.75rem;
+    line-height: 1.4;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4c1d95;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3a146e;
+}
+
+/* Custom scrollbar for better mobile experience */
+@media (max-width: 640px) {
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #4c1d95;
+    border-radius: 2px;
+  }
+}
+
+/* Print styles */
+@media print {
+  .prose {
+    max-width: none;
+    padding: 2rem;
+  }
+  
+  button {
+    display: none;
+  }
+}
