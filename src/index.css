@@ -1,0 +1,91 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lexend:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 260 60% 99%;
+    --foreground: 260 10% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 260 10% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 260 10% 10%;
+
+    --primary: 260 90% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 90% 60%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 260 10% 90%;
+    --muted-foreground: 260 10% 40%;
+
+    --accent: 260 60% 95%;
+    --accent-foreground: 260 90% 40%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 260 20% 90%;
+    --input: 260 20% 90%;
+    --ring: 260 90% 50%;
+
+    --radius: 1rem;
+  }
+
+  * {
+    @apply border-border scroll-smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+@layer components {
+  .hero-section {
+    @apply relative overflow-hidden bg-gradient-to-br from-exam-800 to-exam-950 text-white;
+  }
+  
+  .hero-pattern {
+    @apply absolute inset-0 opacity-10 z-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iLjQiPjxwYXRoIGQ9Ik0zNiAxOGMwLTkuOTQtOC4wNi0xOC0xOC0xOEgwdjE4aDM2eiIvPjwvZz48L2c+PC9zdmc+')];
+  }
+  
+  .semester-card {
+    @apply relative overflow-hidden rounded-2xl bg-white p-6 shadow-lg transition-all duration-300 hover:shadow-xl border border-border/50 hover:border-exam-300;
+  }
+  
+  .semester-card::before {
+    @apply content-[''] absolute -top-1/2 -left-1/2 w-[200%] h-[200%] bg-gradient-to-br from-transparent via-exam-100/30 to-transparent z-0 opacity-0 transition-opacity duration-700 hover:opacity-100;
+    transform: rotate(45deg);
+  }
+  
+  .subject-card {
+    @apply relative overflow-hidden rounded-xl border border-border bg-card p-5 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+  }
+  
+  .question-card {
+    @apply rounded-lg border border-border bg-card p-4 shadow-sm transition-all duration-300 hover:shadow-md; 
+  }
+  
+  .nav-link {
+    @apply relative px-2 py-1 text-foreground/80 transition-colors hover:text-foreground after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-exam-600 after:transition-all hover:after:w-full;
+  }
+  
+  .nav-link.active {
+    @apply text-foreground after:w-full;
+  }
+  
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-lg bg-exam-600 px-5 py-2.5 font-medium text-white shadow-sm transition-all hover:bg-exam-700 focus:outline-none focus:ring-2 focus:ring-exam-500 focus:ring-offset-2;
+  }
+  
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-lg border border-exam-200 bg-white px-5 py-2.5 font-medium text-exam-700 shadow-sm transition-all hover:bg-exam-50 focus:outline-none focus:ring-2 focus:ring-exam-500 focus:ring-offset-2;
+  }
+}
